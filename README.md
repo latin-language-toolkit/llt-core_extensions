@@ -1,4 +1,4 @@
-# Llt::CoreExtensions
+# LLT::CoreExtensions
 
 TODO: Write a gem description
 

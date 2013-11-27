@@ -6,6 +6,15 @@ module LLT
         each_with_index { |x, i| indices << i if yield(x) }
         indices
       end
+
+      def each_overlapping_pair
+        pairs = self[0..-2].zip(self[1..-1])
+        if block_given?
+          pairs.each { |pair| yield(pair) }
+        else
+          pairs.to_enum
+        end
+      end
     end
   end
 end

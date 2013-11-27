@@ -10,4 +10,20 @@ describe Array do
       [[1,2]].select_indices { |x,y| x == 1 && y == 2 }.should have(1).item
     end
   end
+
+  describe "#each_overlapping_pair" do
+    it "returns an enumerator for each overlapping pair" do
+      overlapped_pairs = %w{ a b c }.each_overlapping_pair.map do |pair|
+        pair.map(&:upcase)
+      end
+      overlapped_pairs.should == [%w{ A B }, %w{ B C }]
+    end
+
+    it "has biarity as well" do
+      overlapped_pairs = %w{ a b c }.each_overlapping_pair.map do |a, b|
+        [a.upcase, b]
+      end
+      overlapped_pairs.should == [%w{ A b }, %w{ B c }]
+    end
+  end
 end

@@ -1,6 +1,6 @@
 # LLT::CoreExtensions
 
-TODO: Write a gem description
+Monkey patches used by several llt-gems
 
 ## Installation
 
@@ -18,7 +18,18 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+The monkey patches can be loaded by class or all together, similar to
+ActiveSupport.
+
+```ruby
+require 'llt/core_extensions'
+# => loads patches for all classes
+
+require 'llt/core_extensions/array'
+# => loads only patches for Array
+```
+
+
 
 ## Contributing
 
